@@ -1,0 +1,154 @@
+:root {
+  --bg: #0d1117;
+  --text: #ffffff;
+  --box: rgba(255, 255, 255, 0.08);
+  --glass: rgba(255, 255, 255, 0.1);
+  --highlight: #1abc9c;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  overflow-x: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Background Frame */
+.fixed-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0d1117, #0e141b);
+  z-index: -1;
+}
+
+/* Glowing corner circles */
+.corner-circle {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: var(--highlight);
+  box-shadow: 0 0 80px 40px var(--highlight);
+  opacity: 0.2;
+}
+
+.top-left {
+  top: -80px;
+  left: -80px;
+}
+
+.bottom-right {
+  bottom: -80px;
+  right: -80px;
+}
+
+.container {
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.main-heading {
+  font-size: 3em;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.section {
+  margin-bottom: 60px;
+}
+
+.section-heading {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.time-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.block {
+  background: var(--box);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass);
+  border-radius: 20px;
+  padding: 45px 55px;
+  min-width: 320px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+#current-time,
+#stopwatch {
+  font-size: 3.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+#current-date {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #cccccc;
+}
+
+#stopwatch .ms-time {
+  font-size: 0.4em;
+  margin-left: 10px;
+  opacity: 0.6;
+}
+
+.buttons button {
+  padding: 12px 20px;
+  margin: 6px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  background-color: var(--highlight);
+  color: #fff;
+  transition: 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.buttons button:hover {
+  transform: scale(1.05);
+}
+
+#laps {
+  list-style: none;
+  margin-top: 20px;
+  padding-left: 0;
+  text-align: left;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+#laps li {
+  margin: 4px 0;
+  background-color: var(--glass);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .block {
+    padding: 30px 35px;
+  }
+
+  #current-time,
+  #stopwatch {
+    font-size: 2.4em;
+  }
+}
