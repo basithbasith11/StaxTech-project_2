@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock & Stopwatch</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Fixed Background -->
+  <div class="fixed-bg">
+    <div class="corner-circle top-left"></div>
+    <div class="corner-circle bottom-right"></div>
+  </div>
+
+  <div class="container">
+    <h1 class="main-heading">Clock & Stopwatch</h1>
+
+    <div class="time-blocks">
+      <div class="section">
+        <h2 class="section-heading">CLOCK</h2>
+        <div class="block clock-block">
+          <div id="current-time">00:00:00</div>
+          <div id="current-date">Loading date...</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-heading">STOPWATCH</h2>
+        <div class="block stopwatch-block">
+          <div id="stopwatch">
+            <span class="main-time">00:00:00</span><span class="ms-time">.000</span>
+          </div>
+          <div class="buttons">
+            <button onclick="startStopwatch()">Start</button>
+            <button onclick="stopStopwatch()">Stop</button>
+            <button onclick="resetStopwatch()">Reset</button>
+            <button onclick="recordLap()">Lap</button>
+          </div>
+          <ul id="laps"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-29.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
